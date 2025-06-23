@@ -7,7 +7,7 @@ import { FaCloudDownloadAlt } from "react-icons/fa";
 
 function Navbar() {
   return (
-    <header className="text-gray-600 body-font sticky top-0 bg-white z-10">
+    <header className="text-gray-600 body-font sticky top-0 bg-white z-10" id='home'>
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link href="/" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
           <Image
@@ -20,7 +20,7 @@ function Navbar() {
           />
         </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <Link href={"/"} className="mr-5 hover:text-red-500">Home</Link>
+          <Link href={"#home"} className="mr-5 hover:text-red-500">Home</Link>
           <Link href={"#about"} className="mr-5 hover:text-red-500">About</Link>
           <Link href={"#skills"} className="mr-5 hover:text-red-500">Skills</Link>
           <Link href={"#projects"} className="mr-5 hover:text-red-500">Projects</Link>

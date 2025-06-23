@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  scroll-padding-top: 80px; /* if using a sticky navbar */
+}
+
 .custom-hero {
     background-image: url("/assets/pictures/hero-bg.jpeg");
 }
@@ -18,4 +26,15 @@
 }
 
 
+.backface-hidden {
+  backface-visibility: hidden;
+}
 
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
