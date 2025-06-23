@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+.custom-hero {
+    background-image: url("/assets/pictures/hero-bg.jpeg");
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style {
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+
+.transform-style:hover {
+  transform: rotateY(10deg) rotateX(5deg);
+}
+
+
+

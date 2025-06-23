@@ -3,8 +3,6 @@ import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import Typewriter from 'typewriter-effect';
-import './Hero.css'
-
 
 function Hero() {
 return (
@@ -43,16 +41,19 @@ return (
            
          </div>
       </div>
-      <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">       
+      <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 perspective">
+         <div className="transform-style rounded-3xl transition-transform duration-500 hover:rotate-3d">
             <Image
-            src="/assets/pictures/rakesh.jpeg" 
-            alt="Logo"
-            width={400}
-            height={400}
-            priority
-            className="object-cover object-center rounded-3xl"
+               src="/assets/pictures/rakesh.jpeg" 
+               alt="Logo"
+               width={400}
+               height={400}
+               priority
+               className="object-cover object-center rounded-3xl"
             />
+         </div>
       </div>
+
    </div>
 </section>
 )
