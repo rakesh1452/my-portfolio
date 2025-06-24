@@ -27,13 +27,25 @@ function Navbar() {
         </Link>
 
         {/* Center: Nav Links (desktop) */}
-        <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-6 text-base">
-          <Link href="#home" className="hover:text-red-500">Home</Link>
-          <Link href="#about" className="hover:text-red-500">About</Link>
-          <Link href="#skills" className="hover:text-red-500">Skills</Link>
-          <Link href="#projects" className="hover:text-red-500">Projects</Link>
-          <Link href="#contact" className="hover:text-red-500">Contact</Link>
-        </nav>
+       <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-6 text-base">
+        {[
+          { href: "#home", label: "Home" },
+          { href: "#about", label: "About" },
+          { href: "#skills", label: "Skills" },
+          { href: "#projects", label: "Projects" },
+          { href: "#contact", label: "Contact" }
+        ].map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="group relative text-black transition-colors duration-300 hover:text-red-500"
+          >
+            {item.label}
+            <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+        ))}
+      </nav>
+
 
         {/* Right: CV Download (desktop) + Menu icon (mobile) */}
         <div className="flex items-center space-x-4">
@@ -46,13 +58,26 @@ function Navbar() {
           </Link>
 
           {/* Hamburger Icon (mobile only) */}
-          <button
-            className="text-2xl md:hidden focus:outline-none"
-            onClick={toggleMenu}
-            aria-label="Toggle Menu"
-          >
-            {menuOpen ? <FaTimes /> : <FaBars />}
-          </button>
+         <button
+          className="relative w-10 h-10 md:hidden focus:outline-none"
+          onClick={toggleMenu}
+          aria-label="Toggle Menu"
+        >
+          {/* Hamburger Icon */}
+          <FaBars
+            className={`absolute inset-0 m-auto text-2xl transition-all duration-300 ${
+              menuOpen ? "opacity-0 scale-75 rotate-45" : "opacity-100 scale-100 rotate-0"
+            }`}
+          />
+
+          {/* Close Icon */}
+          <FaTimes
+            className={`absolute inset-0 m-auto text-2xl transition-all duration-300 ${
+              menuOpen ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 rotate-45"
+            }`}
+          />
+        </button>
+
         </div>
       </div>
 

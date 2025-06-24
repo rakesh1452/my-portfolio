@@ -33,10 +33,14 @@ return (
          </p>
          <div className="flex justify-center">
             <Link href="#contact">
-             <button className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">
-               Contact Us
-            </button>
-            </Link>
+  <button className="relative inline-flex items-center justify-center px-6 py-2 text-lg text-red-500 border-2 border-red-500 rounded overflow-hidden transition-all duration-300 group">
+    <span className="absolute left-0 top-0 h-full w-0 bg-red-500 transition-all duration-300 group-hover:w-full z-0"></span>
+    <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+      Contact Us
+    </span>
+  </button>
+</Link>
+
            
            
          </div>

@@ -15,11 +15,12 @@ theme: "colored",
 transition: Bounce,
 });
   return (
-   <section className="text-gray-600 body-font relative py-24" id='contact'>
+   <section className="text-gray-600 body-font bg-gray-100 bg-fixed bg-cover py-24" id='contact'>
        <div className="flex flex-col text-center w-full mb-20">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+          <h2 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
            Contact Us
-          </h1>
+          </h2>
+           <div className='w-[50px] bg-gray-500 h-[2px] mx-auto mb-5'></div>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
             A showcase of web development work across domains like e-commerce, medical, real estate, and more.
           </p>
@@ -32,11 +33,7 @@ transition: Bounce,
             width="100%"
             height="100%"
             className="absolute inset-0"
-            frameBorder={0}
             title="map"
-            marginHeight={0}
-            marginWidth={0}
-            scrolling="no"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.9369597484033!2d72.59687857587991!3d22.952548668936622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e8f471050a1b5%3A0xe8e954a94a84d853!2sLAXMI%20NIVAS%20NAROL%2C%20Vatva%2C%20Ahmedabad%2C%20Gujarat%20382440!5e0!3m2!1sen!2sin!4v1750603438727!5m2!1sen!2sin"
             style={{ filter: " contrast(1.2) opacity(0.4)" }}
             />
@@ -61,7 +58,7 @@ transition: Bounce,
                </div>
             </div>
          </div>
-         <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+         <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 p-5 px-6 rounded-lg">
             <h2 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
                Get in touch
             </h2>
@@ -101,22 +98,29 @@ transition: Bounce,
                   defaultValue={""}
                   />
             </div>
-            <button onClick={notify} className="text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">
-            Send Message
+           <button
+            onClick={notify}
+            className="relative inline-flex items-center justify-center px-6 py-2 text-lg text-red-500 border-2 border-red-500 rounded overflow-hidden transition-all duration-300 group"
+            >
+            <span className="absolute left-0 top-0 h-full w-0 bg-red-500 transition-all duration-300 group-hover:w-full z-0"></span>
+            <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+               Send Message
+            </span>
             </button>
+
          <ToastContainer
-   position="top-right"
-   autoClose={5000}
-   hideProgressBar={false}
-   newestOnTop={false}
-   closeOnClick={false}
-   rtl={false}
-   pauseOnFocusLoss
-   draggable
-   pauseOnHover
-   theme="colored"
-   transition={Bounce}
-   />
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+            transition={Bounce}
+            />
          
          </div>
       </div>

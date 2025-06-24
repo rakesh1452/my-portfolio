@@ -56,12 +56,13 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="text-gray-600 body-font bg-gray-100 bg-fixed bg-cover" id="projects">
+    <section className="text-gray-600 body-font" id="projects">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+          <h2 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
             My Projects
-          </h1>
+          </h2>
+          <div className='w-[50px] bg-gray-500 h-[2px] mx-auto mb-5'></div>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
             A showcase of web development work across domains like e-commerce, medical, real estate, and more.
           </p>
@@ -89,13 +90,17 @@ const Projects = () => {
                     </h2>
                     <h1 className="text-lg font-semibold mb-3">{project.title}</h1>
                     <p className="text-sm mb-4">{project.description}</p>
-                    <Link
-                      href={project.url}
-                      target="_blank"
-                      className="inline-flex text-white bg-red-500 border-0 py-2 px-5 rounded hover:bg-red-600 text-sm"
-                    >
+                   <Link
+                    href={project.url}
+                    target="_blank"
+                    className="relative inline-flex items-center justify-center px-5 py-2 text-sm text-red-500 border-2 border-red-500 rounded overflow-hidden transition-all duration-300 group"
+                  >
+                    <span className="absolute left-0 top-0 h-full w-0 bg-red-500 transition-all duration-300 group-hover:w-full z-0"></span>
+                    <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
                       View Project
-                    </Link>
+                    </span>
+                  </Link>
+
                   </div>
                 </div>
               </div>
