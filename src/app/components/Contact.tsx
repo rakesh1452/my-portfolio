@@ -3,17 +3,45 @@ import React from "react";
  import { ToastContainer, toast, Bounce } from 'react-toastify';
 
 function Contact() {
-      const notify = () => toast.success('🦄Message sent!', {
-  position: "top-right",
-  autoClose: 5000,
-  hideProgressBar: false,
-  closeOnClick: false,
-  pauseOnHover: true,
-  draggable: true,
-  progress: undefined,
-  theme: "colored",
-  transition: Bounce,
+      const notify = () =>
+  toast.success("🦄 Message sent!", {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "colored",
+    transition: Bounce,
   });
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch("https://formspree.io/f/xgvyrgvz", {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (response.ok) {
+      form.reset(); // Clear form
+      notify();     // Show toast
+    } else {
+      toast.error("❌ Failed to send message");
+    }
+  } catch (error) {
+    toast.error("⚠️ Something went wrong");
+  }
+};
+
   return (
     <section
       className="text-gray-600 body-font bg-gray-100 bg-fixed bg-cover py-24"
@@ -69,7 +97,7 @@ function Contact() {
             Feel free to contact me.
           </p>
 
-          <form  action="https://formspree.io/f/xgvyrgvz" method="POST">
+          <form onSubmit={handleSubmit} action="https://formspree.io/f/xgvyrgvz" method="POST">
             <div className="relative mb-4">
               <label htmlFor="name" className="leading-7 text-sm text-gray-600">
                 Name
@@ -132,15 +160,15 @@ function Contact() {
                 required
               />
             </div>
-            <button
-              onClick={notify}
-              className="relative inline-flex items-center justify-center px-6 py-2 text-lg text-red-500 border-2 border-red-500 rounded overflow-hidden transition-all duration-300 group"
-            >
-              <span className="absolute left-0 top-0 h-full w-0 bg-red-500 transition-all duration-300 group-hover:w-full z-0"></span>
-              <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
-                Send Message
-              </span>
-            </button>
+           <button
+            type="submit"
+            className="relative inline-flex items-center justify-center px-6 py-2 text-lg text-red-500 border-2 border-red-500 rounded overflow-hidden transition-all duration-300 group"
+         >
+            <span className="absolute left-0 top-0 h-full w-0 bg-red-500 transition-all duration-300 group-hover:w-full z-0"></span>
+            <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+               Send Message
+            </span>
+         </button>
           </form>
 
           <ToastContainer
