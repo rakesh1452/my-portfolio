@@ -6,14 +6,14 @@ function About() {
     <section className="text-gray-600 body-font" id='about'>
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <div className="w-80 h-80 mb-10 md:mb-0 mx-auto animate-float">
-  <img
-    src="/assets/pictures/white-shirt.jpg"
-    alt="hero"
-    width={400}
-    height={400}
-    className="w-full h-full rounded-full shadow-xl object-cover object-top"
-  />
-</div>
+              <img
+                src="/assets/pictures/white-shirt.jpg"
+                alt="hero"
+                width={400}
+                height={400}
+                className="w-full h-full rounded-full shadow-xl object-cover object-top"
+              />
+            </div>
 
 
 

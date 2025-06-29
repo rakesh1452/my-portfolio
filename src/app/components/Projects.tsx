@@ -53,7 +53,6 @@ const projects = [
     url: 'https://archgod.in/',
   },
 ];
-
 const Projects = () => {
   return (
     <section className="text-gray-600 body-font" id="projects">
@@ -109,4 +108,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Projects
