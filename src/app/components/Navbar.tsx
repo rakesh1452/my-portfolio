@@ -17,7 +17,7 @@ function Navbar() {
         {/* Left: Logo */}
         <Link href="/" className="flex items-center text-gray-900">
           <Image
-            src="/assets/pictures/logo.png"
+            src="/assets/pictures/logo.jpg"
             alt="Logo"
             width={100}
             height={100}
