@@ -20,7 +20,7 @@ function Navbar() {
             src="/assets/pictures/logo.jpg"
             alt="Logo"
             width={100}
-            height={100}
+            height={47}
             priority
             className="w-[128]"
           />
