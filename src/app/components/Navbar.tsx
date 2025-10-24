@@ -22,7 +22,7 @@ function Navbar() {
             width={100}
             height={47}
             priority
-            className="w-[128]"
+            className="w-[80px]"
           />
         </Link>
 
