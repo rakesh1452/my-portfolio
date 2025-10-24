@@ -11,7 +11,7 @@ function Navbar() {
   const handleLinkClick = () => setMenuOpen(false);
 
   return (
-    <header className="text-gray-600 body-font sticky top-0 bg-white z-10 shadow-sm">
+    <header className="text-gray-600 body-font sticky top-0 bg-white z-100 shadow-sm">
       <div className="container mx-auto p-5 flex items-center justify-between relative">
 
         {/* Left: Logo */}
